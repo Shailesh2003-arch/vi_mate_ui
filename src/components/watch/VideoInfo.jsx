@@ -22,9 +22,9 @@ function VideoInfo({ video }) {
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
 
                 {/* Views */}
-                <p className="text-zinc-400">
+                {/* <p className="text-zinc-400">
                     {video.views.toLocaleString()} views
-                </p>
+                </p> */}
 
                 {/* Buttons */}
                 <div className="flex flex-wrap gap-3">
