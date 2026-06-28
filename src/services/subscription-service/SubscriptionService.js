@@ -5,3 +5,9 @@ export const getMySubscriptions = async () => {
 
   return response.data;
 };
+
+export const toggleSubscription = async ({ channelId }) => {
+  const response = await axiosInstance.post(`/subscriptions/${channelId}`);
+
+  return response.data.data;
+};
