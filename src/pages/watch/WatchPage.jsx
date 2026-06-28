@@ -46,7 +46,9 @@ function WatchPage() {
                 />
 
             
-                <VideoInfo video={watchData?.video} />
+                <VideoInfo video={watchData?.video} 
+                    videoId={videoId}
+                />
                 <ChannelInfo channel={watchData?.channel}
                 videoId={videoId}
                 />
