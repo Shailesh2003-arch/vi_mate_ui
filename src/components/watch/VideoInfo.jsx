@@ -5,10 +5,12 @@ import {
 
 import { PiShareFat } from "react-icons/pi";
 import { RiPlayListAddLine } from "react-icons/ri";
+import { useToggleReaction } from "../../hooks/useToggleReaction.js";
 
-function VideoInfo({ video }) {
-
+function VideoInfo({ video, videoId }) {
+    const { mutate: toggleReaction, isPending } = useToggleReaction();
     if (!video) return null;
+
 
     return (
         <div className="mt-4 space-y-4">
@@ -29,7 +31,13 @@ function VideoInfo({ video }) {
                 {/* Buttons */}
                 <div className="flex flex-wrap gap-3">
 
-                    <button
+                    <button disabled={isPending}
+    onClick={() =>
+        toggleReaction({
+            videoId,
+            type: "like",
+        })
+    }
                         className="
                             flex
                             items-center
@@ -43,10 +51,16 @@ function VideoInfo({ video }) {
                         "
                     >
                         <BiLike size={20} />
-                        <span>Like</span>
+                        <span>{video.likes}</span>
                     </button>
 
-                    <button
+                    <button disabled={isPending}
+    onClick={() =>
+        toggleReaction({
+            videoId,
+            type: "dislike",
+        })
+    }
                         className="
                             flex
                             items-center
@@ -60,7 +74,7 @@ function VideoInfo({ video }) {
                         "
                     >
                         <BiDislike size={20} />
-                        <span>Dislike</span>
+                        <span>{video.dislikes}</span>
                     </button>
 
                     <button
