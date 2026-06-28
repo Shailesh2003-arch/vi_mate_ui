@@ -19,3 +19,11 @@ export const watchVideo = async (videoId) => {
 
   return response.data.data;
 };
+
+export const getRecommendedVideos = async (videoId) => {
+  const response = await axiosInstance.get(
+    `/videos/${videoId}/recommendations`,
+  );
+
+  return response.data.data;
+};
