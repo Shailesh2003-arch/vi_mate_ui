@@ -1,6 +1,7 @@
 import { useVideo } from "../../hooks/useVideo";
 import VideoPlayer from "../../components/watch/VideoPlayer.jsx";
 import VideoInfo from "../../components/watch/VideoInfo.jsx";
+import ChannelInfo from "../../components/watch/ChannelInfo.jsx";
 import { useParams } from "react-router-dom";
 function WatchPage() {
 
@@ -33,8 +34,11 @@ function WatchPage() {
                              videoId={videoId}
                 />
 
+            
                 <VideoInfo video={watchData?.video} />
-
+                <ChannelInfo channel={watchData?.channel}
+                videoId={videoId}
+                />
             </div>
             </div>
 
