@@ -1,4 +1,5 @@
 import { useState } from "react";
+import timeAgo from "../../utils/timeAgo";
 
 function Description({ video }) {
     const [expanded, setExpanded] = useState(false);
@@ -14,14 +15,7 @@ function Description({ video }) {
         ? video.description
         : video.description.slice(0, MAX_LENGTH);
 
-    const uploadDate = new Date(video.createdAt).toLocaleDateString(
-        "en-IN",
-        {
-            day: "numeric",
-            month: "short",
-            year: "numeric",
-        }
-    );
+    
 
     return (
         <div
@@ -50,7 +44,7 @@ function Description({ video }) {
 
                 <span className="text-zinc-500">•</span>
 
-                <span>{uploadDate}</span>
+                <span>{timeAgo(video.createdAt)}</span>
             </div>
 
             {/* Description */}
