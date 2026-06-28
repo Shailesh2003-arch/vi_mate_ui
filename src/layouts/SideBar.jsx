@@ -53,10 +53,6 @@ function Sidebar() {
       title: "Home",
       icon: MdHomeFilled,
     },
-    {
-      title: "Subscriptions",
-      icon: MdOutlineSubscriptions,
-    },
   ];
 
   const userItems = [
