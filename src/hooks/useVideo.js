@@ -1,6 +1,9 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getVideoById } from "../services/video-service/VideoService.js";
-import { watchVideo } from "../services/video-service/VideoService.js";
+import {
+  watchVideo,
+  getRecommendedVideos,
+} from "../services/video-service/VideoService.js";
 
 export const useVideo = (videoId) => {
   return useQuery({
@@ -33,5 +36,15 @@ export const useWatchVideo = () => {
         };
       });
     },
+  });
+};
+
+export const useRecommendedVideos = (videoId) => {
+  return useQuery({
+    queryKey: ["recommendedVideos", videoId],
+
+    queryFn: () => getRecommendedVideos(videoId),
+
+    enabled: !!videoId,
   });
 };
