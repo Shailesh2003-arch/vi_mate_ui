@@ -69,7 +69,6 @@ function ChannelInfo({ channel, videoId }) {
             {/* Right Side */}
             <button  onClick={() => {
 
-        console.log(channel._id);
 
         toggleSubscription({
             channelId: channel._id,
