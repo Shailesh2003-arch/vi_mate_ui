@@ -38,17 +38,27 @@ function VideoInfo({ video, videoId }) {
             type: "like",
         })
     }
-                        className="
-                            flex
-                            items-center
-                            gap-2
-                            rounded-full
-                            bg-zinc-800
-                            px-4
-                            py-2
-                            hover:bg-zinc-700
-                            transition-colors
-                        "
+                        className={
+                            `
+                            
+                             flex
+        items-center
+        gap-2
+        rounded-full
+        px-4
+        py-2
+        cursor-pointer
+        transition-colors
+                             ${
+            video.userReaction === "like"
+               ? "bg-blue-900/40 text-blue-300 hover:bg-blue-900/50"
+                : "bg-zinc-800 text-white hover:bg-zinc-700"
+        }    
+                            
+                            
+                            `
+                        }
+                        
                     >
                         <BiLike size={20} />
                         <span>{video.likes}</span>
@@ -61,17 +71,21 @@ function VideoInfo({ video, videoId }) {
             type: "dislike",
         })
     }
-                        className="
-                            flex
-                            items-center
-                            gap-2
-                            rounded-full
-                            bg-zinc-800
-                            px-4
-                            py-2
-                            hover:bg-zinc-700
-                            transition-colors
-                        "
+                         className={`
+        flex
+        items-center
+        gap-2
+        rounded-full
+        px-4
+        py-2
+        cursor-pointer
+        transition-colors
+        ${
+            video.userReaction === "dislike"
+                ? "bg-blue-900/40 text-blue-300 hover:bg-blue-900/50"
+                : "bg-zinc-800 text-white hover:bg-zinc-700"
+        }
+    `}
                     >
                         <BiDislike size={20} />
                         <span>{video.dislikes}</span>
