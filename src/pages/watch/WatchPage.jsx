@@ -5,6 +5,7 @@ import ChannelInfo from "../../components/watch/ChannelInfo.jsx";
 import RecommendedVideo from "../../components/watch/RecommendedVideo.jsx";
 import Description from "../../components/watch/Description.jsx";
 import { useParams } from "react-router-dom";
+import CommentSection from "../../components/comments/CommentSection.jsx";
 function WatchPage() {
 
     const { videoId } = useParams();
@@ -54,6 +55,7 @@ function WatchPage() {
                 />
 
                 <Description video={watchData.video}/>
+                <CommentSection  videoId={videoId}/>
                 
             </div>
            <div className="space-y-2">
