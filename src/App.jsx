@@ -4,6 +4,7 @@ import Register from "./pages/auth/Register.jsx"
 import Home from "./pages/Home.jsx";
 import MainLayout from "./layouts/MainLayout.jsx";
 import WatchPage from "./pages/watch/WatchPage.jsx";
+import ChannelPage from "./components/channel/ChannelPage.jsx";
 
 function App() {
   return (
@@ -19,6 +20,12 @@ function App() {
     path="/watch/:videoId"
     element={<WatchPage />}
 />
+
+    <Route
+    path="/channel/:channelId"
+    element={<ChannelPage />}
+/>
+
 
                 <Route
                     path="/register"
