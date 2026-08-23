@@ -1,6 +1,6 @@
 import CommentItem from "./CommentItem.jsx";
 
-function CommentsList({ comments }) {
+function CommentsList({ comments, videoId }) {
   if (!comments.length) {
     return (
       <p className="text-zinc-400">
@@ -16,6 +16,7 @@ function CommentsList({ comments }) {
         <CommentItem
           key={comment._id}
           comment={comment}
+          videoId={videoId}
         />
       ))}
 
