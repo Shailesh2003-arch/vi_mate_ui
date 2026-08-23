@@ -55,6 +55,7 @@ function CommentSection({ videoId }) {
 
       <CommentsList
         comments={commentsData?.docs || []}
+        videoId={videoId}
       />
 
     </div>
