@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function VideoCard({ video }) {
 
-    
+    console.log(video);
 
 
     return (
