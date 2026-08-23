@@ -17,3 +17,18 @@ export const createComment = async ({ videoId, text }) => {
 
   return response.data.data;
 };
+
+export const updateComment = async ({ commentId, text }) => {
+  const response = await axiosInstance.patch(`/comments/${commentId}`, {
+    text,
+  });
+
+  return response.data.data;
+};
+
+export const deleteComment = async ({ commentId }) => {
+  console.log("Service received:", commentId);
+  const response = await axiosInstance.delete(`/comments/${commentId}`);
+
+  return response.data.data;
+};
